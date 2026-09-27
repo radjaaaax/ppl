@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Course</title>
+</head>
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-box">MC</div>
+            <div>
+                <strong>My Course</strong>
+                <small>Manajemen Sertikom</small>
+            </div>
+        </div>
+
+
+
+        <div class="menu-title account-title">ROLE LAIN</div>
+        <button class="menu" onclick="showPage('assessor', this)">
+            <span>♙</span> Assessor
+        </button>
+         <div class="menu-item">
+        <a href="index.html"><i class="fa-solid fa-right-from-bracket"></i> Keluar</a>
+    </div>
+
+        <div class="user-mini">
+            <div class="avatar">MN</div>
+            <div>
+                <strong>Mutia Nur Afifah</strong>
+                <small>Peserta</small>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <div>
+                <span class="top-label">APLIKASI MANAJEMEN SERTIKOM</span>
+                <h2 id="pageTitle">Dashboard</h2>
+            </div>
+            <div class="top-right">
+                <button class="notification">♧</button>
+                <div class="top-user">
+                    <div class="avatar small">MN</div>
+                    <span>Mutia</span>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- PROFIL -->
+        <section id="profil" class="page">
+            <div class="page-head">
+                <div><h1>Profil</h1><p>Informasi akun peserta.</p></div>
+            </div>
+            <div class="card profile-card">
+                <div class="profile-avatar">MN</div>
+                <div><h2>Mutia Nur Afifah</h2><p>Peserta · Teknologi Rekayasa Perangkat Lunak</p></div>
+            </div>
+        </section>
+
+
+        <!-- ASSESSOR DASHBOARD -->
+        <section id="assessor" class="page role-page">
+            <div class="page-head">
+                <div>
+                    <span class="role-label assessor-label">ASSESSOR</span>
+                    <h1>Dashboard Assessor</h1>
+                    <p>Kelola jadwal asesmen dan input nilai peserta.</p>
+                </div>
+            </div>
+
+            <div class="role-stats">
+                <div class="role-stat">
+                    <span>Jadwal Hari Ini</span>
+                    <strong>2</strong>
+                    <small>Asesmen</small>
+                </div>
+                <div class="role-stat">
+                    <span>Peserta</span>
+                    <strong>12</strong>
+                    <small>Terdaftar</small>
+                </div>
+                <div class="role-stat">
+                    <span>Sudah Dinilai</span>
+                    <strong>8</strong>
+                    <small>Peserta</small>
+                </div>
+                <div class="role-stat">
+                    <span>Belum Dinilai</span>
+                    <strong>4</strong>
+                    <small>Peserta</small>
+                </div>
+            </div>
+
+            <div class="role-grid">
+                <div class="card">
+                    <div class="card-head">
+                        <div>
+                            <span class="label">JADWAL ASESMEN</span>
+                            <h3>Jadwal Terdekat</h3>
+                        </div>
+                        <button class="secondary" onclick="showAssessorTab('schedule')">Lihat Semua</button>
+                    </div>
+
+                    <div class="assessor-schedule">
+                        <div class="schedule-row">
+                            <div class="schedule-date"><b>08</b><small>OKT</small></div>
+                            <div>
+                                <b>Junior Web Developer</b>
+                                <span>09.00 - 11.00 WIB · Lab Komputer 2</span>
+                            </div>
+                            <span class="status blue-status">Terjadwal</span>
+                        </div>
+                        <div class="schedule-row">
+                            <div class="schedule-date"><b>10</b><small>OKT</small></div>
+                            <div>
+                                <b>Database Administrator</b>
+                                <span>13.00 - 15.00 WIB · Lab Komputer 1</span>
+                            </div>
+                            <span class="status blue-status">Terjadwal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-head">
+                        <div>
+                            <span class="label">INPUT NILAI</span>
+                            <h3>Peserta Belum Dinilai</h3>
+                        </div>
+                        <span class="count-badge">4</span>
+                    </div>
+                    <div class="mini-person"><div class="avatar">AP</div><div><b>Andi Pratama</b><small>Junior Web Developer</small></div><button class="secondary" onclick="openScoreForm('Andi Pratama')">Nilai</button></div>
+                    <div class="mini-person"><div class="avatar">SR</div><div><b>Salsa Ramadhani</b><small>Junior Web Developer</small></div><button class="secondary" onclick="openScoreForm('Salsa Ramadhani')">Nilai</button></div>
+                    <div class="mini-person"><div class="avatar">RF</div><div><b>Rafi Fadillah</b><small>Database Administrator</small></div><button class="secondary" onclick="openScoreForm('Rafi Fadillah')">Nilai</button></div>
+                </div>
+            </div>
+
+            <div class="card assessor-table-card">
+                <div class="card-head">
+                    <div>
+                        <span class="label">DATA PESERTA</span>
+                        <h3>Daftar Peserta Asesmen</h3>
+                    </div>
+                </div>
+                <div class="simple-table">
+                    <div class="simple-row table-title"><span>Peserta</span><span>Sertikom</span><span>Jadwal</span><span>Status</span><span>Aksi</span></div>
+                    <div class="simple-row"><span>Andi Pratama</span><span>Junior Web Developer</span><span>08 Okt</span><span>Belum dinilai</span><button class="table-btn" onclick="openScoreForm('Andi Pratama')">Input Nilai</button></div>
+                    <div class="simple-row"><span>Salsa Ramadhani</span><span>Junior Web Developer</span><span>08 Okt</span><span>Belum dinilai</span><button class="table-btn" onclick="openScoreForm('Salsa Ramadhani')">Input Nilai</button></div>
+                    <div class="simple-row"><span>Dimas Saputra</span><span>Junior Web Developer</span><span>08 Okt</span><span class="done-text">Sudah dinilai</span><button class="table-btn" onclick="openScoreForm('Dimas Saputra')">Lihat Nilai</button></div>
+                </div>
+            </div>
+
+            <!-- assessor score modal -->
+            <div id="scorePanel" class="modal-panel">
+                <div class="modal-card">
+                    <div class="modal-head">
+                        <div><span class="label">FORM PENILAIAN</span><h2 id="scoreStudent">Input Nilai Peserta</h2></div>
+                        <button class="close-btn" onclick="closeScoreForm()">×</button>
+                    </div>
+                    <div class="form-row">
+                        <div><label>Nilai Teori</label><input id="scoreTheory" type="number" min="0" max="100" placeholder="0 - 100"></div>
+                        <div><label>Nilai Praktik</label><input id="scorePractice" type="number" min="0" max="100" placeholder="0 - 100"></div>
+                    </div>
+                    <label>Catatan Asesor</label>
+                    <textarea id="scoreNote" placeholder="Masukkan catatan hasil asesmen"></textarea>
+                    <label>Hasil</label>
+                    <select id="scoreResult"><option>Kompeten</option><option>Belum Kompeten</option></select>
+                    <button class="primary full" onclick="saveScore()">Simpan Nilai</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

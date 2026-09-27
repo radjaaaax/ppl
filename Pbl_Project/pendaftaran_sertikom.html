@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Sertikom - Manajemen Sertikom</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .form-group { display: flex; flex-direction: column; gap: 8px; }
+        label { font-size: 0.88rem; font-weight: 600; color: #334155; }
+        input[type="text"], input[type="email"], input[type="tel"], select { width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.9rem; outline: none; }
+        input:focus, select:focus { border-color: #0284c7; box-shadow: 0 0 0 3px #e0f2fe; }
+        .file-upload-box { border: 2px dashed #cbd5e1; padding: 20px; border-radius: 8px; text-align: center; background-color: #f8fafc; cursor: pointer; }
+        .file-upload-box:hover { background-color: #f1f5f9; border-color: #0284c7; }
+        .file-upload-box input[type="file"] { display: none; }
+    </style>
+</head>
+<body>
+
+    <div id="sidebar-container"></div>
+
+    <div class="main-content">
+        <header class="topbar">
+            <div><span style="color: #64748b; font-size: 0.85rem;">Peserta / Pendaftaran</span></div>
+            <div class="user-profile">
+                <div class="user-avatar">RR</div>
+                <div>
+                    <div style="font-weight: 600; font-size: 0.9rem;">Radja Rafa A.</div>
+                    <div style="font-size: 0.75rem; color: #64748b;">NIM: 4342601065</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="page-header">
+                <h2>Formulir Pendaftaran Sertifikasi Kompetensi</h2>
+                <p>Isi data diri dan pilih skema sertifikasi sesuai minat Anda.</p>
+            </div>
+
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <div class="card">
+                    <h3 class="section-title"><i class="fa-solid fa-user"></i> Data Diri Peserta</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Nama Lengkap</label>
+                            <input type="text" value="Radja Rafa Alfathir" readonly style="background-color:#f8fafc;">
+                        </div>
+                        <div class="form-group">
+                            <label>NIM</label>
+                            <input type="text" value="4342601065" readonly style="background-color:#f8fafc;">
+                        </div>
+                        <div class="form-group">
+                            <label>Program Studi</label>
+                            <input type="text" value="Teknologi Rekayasa Perangkat Lunak" readonly style="background-color:#f8fafc;">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Student</label>
+                            <input type="email" value="radjarafa28@gmail.com" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="section-title"><i class="fa-solid fa-list-check"></i> Skema Sertifikasi</h3>
+                    <div class="form-group">
+                        <label>Pilih Skema</label>
+                        <select required>
+                            <option value="" disabled selected>-- Pilih Skema Sertikom --</option>
+                            <option value="web-dev">Web Developer / Programmer (Tersedia 12 Kuota)</option>
+                            <option value="network-eng">Network Engineer (Tersedia 5 Kuota)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="section-title"><i class="fa-solid fa-folder-open"></i> Unggah Berkas Persyaratan</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Pasfoto Formal (Latar Merah/Biru)</label>
+                            <label class="file-upload-box">
+                                <i class="fa-solid fa-cloud-arrow-up" style="font-size: 1.8rem; color:#0284c7; margin-bottom:8px;"></i>
+                                <p style="font-size:0.85rem; color:#64748b;">Klik/seret file JPG/PNG (Maks 2MB)</p>
+                                <input type="file" accept="image/*" required>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>Scan KTM</label>
+                            <label class="file-upload-box">
+                                <i class="fa-solid fa-address-card" style="font-size: 1.8rem; color:#0284c7; margin-bottom:8px;"></i>
+                                <p style="font-size:0.85rem; color:#64748b;">Klik/seret file PDF/JPG (Maks 2MB)</p>
+                                <input type="file" accept=".pdf,image/*" required>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display:flex; justify-content:flex-end; gap:12px;">
+                    <button type="submit" class="btn"><i class="fa-solid fa-paper-plane"></i> Kirim Pendaftaran</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        fetch('sidebar.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+                document.getElementById('menu-pendaftaran').classList.add('active');
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Seleksi - Manajemen Sertikom</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+        table th, table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid #f1f5f9; font-size: 0.9rem; }
+        table th { background-color: #f8fafc; color: #475569; font-weight: 600; }
+        .badge-kompeten { padding: 8px 16px; background-color: #dcfce7; color: #15803d; border-radius: 20px; font-weight: 700; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <div id="sidebar-container"></div>
+
+    <div class="main-content">
+        <header class="topbar">
+            <div><span style="color: #64748b; font-size: 0.85rem;">Peserta / Hasil Seleksi</span></div>
+            <div class="user-profile">
+                <div class="user-avatar">RR</div>
+                <div>
+                    <div style="font-weight: 600; font-size: 0.9rem;">Radja Rafa A.</div>
+                    <div style="font-size: 0.75rem; color: #64748b;">NIM: 4342601065</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="page-header">
+                <h2>Laporan Hasil Uji & Rekomendasi Assesor</h2>
+                <p>Berikut rincian penilaian dan status kompetensi hasil evaluasi oleh penguji resmi.</p>
+            </div>
+
+            <div class="card" style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <h3 style="font-size:1.25rem;">Skema Rekayasa Perangkat Lunak</h3>
+                    <p style="font-size:0.9rem; color:#64748b; margin-top:4px;">No. Registrasi: <strong>REG-SRT-2026-0892</strong></p>
+                </div>
+                <span class="badge-kompeten"><i class="fa-solid fa-award"></i> REKOMENDASI: KOMPETEN</span>
+            </div>
+
+            <div class="card">
+                <h3 class="section-title"><i class="fa-solid fa-list-check"></i> Rincian Penilaian Unit Kompetensi</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Kode Unit</th>
+                            <th>Judul Unit Kompetensi</th>
+                            <th>Hasil Evaluasi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>J.620100.004.01</td>
+                            <td>Mengimplementasikan User Interface (UI) Web</td>
+                            <td style="color:#16a34a; font-weight:600;"><i class="fa-solid fa-check"></i> Kompeten</td>
+                        </tr>
+                        <tr>
+                            <td>J.620100.019.01</td>
+                            <td>Menggunakan Struktur Data & Database Relasional</td>
+                            <td style="color:#16a34a; font-weight:600;"><i class="fa-solid fa-check"></i> Kompeten</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        fetch('sidebar.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+                document.getElementById('menu-hasil').classList.add('active');
+            });
+    </script>
+</body>
+</html>

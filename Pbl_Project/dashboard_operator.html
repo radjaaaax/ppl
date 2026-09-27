@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My Course</title>
+</head>
+<body>
+
+<section id="admin" class="page role-page">
+            <div class="page-head">
+                <div>
+                    <span class="role-label admin-label">ADMIN / OPERATOR</span>
+                    <h1>Dashboard Operator</h1>
+                    <p>Kelola sertikom, peserta, berkas, dan jadwal asesmen.</p>
+                </div>
+                <button class="primary" onclick="openCourseForm()">+ Tambah Sertikom</button>
+            </div>
+
+            <div class="role-stats">
+                <div class="role-stat"><span>Sertikom Aktif</span><strong>8</strong><small>Program</small></div>
+                <div class="role-stat"><span>Total Peserta</span><strong>42</strong><small>Peserta terdaftar</small></div>
+                <div class="role-stat"><span>Berkas Masuk</span><strong>18</strong><small>Perlu diperiksa</small></div>
+                <div class="role-stat"><span>Jadwal Aktif</span><strong>6</strong><small>Jadwal asesmen</small></div>
+            </div>
+
+            <div class="admin-grid">
+                <div class="card">
+                    <div class="card-head">
+                        <div><span class="label">KELOLA SERTIKOM</span><h3>Sertikom Ditawarkan</h3></div>
+                        <button class="secondary" onclick="openCourseForm()">Tambah</button>
+                    </div>
+                    <div class="admin-course">
+                        <div><b>Junior Web Developer</b><span>20 peserta</span></div><span class="status green-status">Aktif</span><button class="table-btn" onclick="alert('Edit Junior Web Developer')">Edit</button>
+                    </div>
+                    <div class="admin-course">
+                        <div><b>Database Administrator</b><span>12 peserta</span></div><span class="status green-status">Aktif</span><button class="table-btn" onclick="alert('Edit Database Administrator')">Edit</button>
+                    </div>
+                    <div class="admin-course">
+                        <div><b>Software Developer</b><span>10 peserta</span></div><span class="status green-status">Aktif</span><button class="table-btn" onclick="alert('Edit Software Developer')">Edit</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-head">
+                        <div><span class="label">BERKAS</span><h3>Perlu Diperiksa</h3></div>
+                        <span class="count-badge">18</span>
+                    </div>
+                    <div class="mini-person"><div class="avatar">AP</div><div><b>Andi Pratama</b><small>Junior Web Developer</small></div><button class="secondary" onclick="alert('Berkas Andi diperiksa')">Periksa</button></div>
+                    <div class="mini-person"><div class="avatar">SR</div><div><b>Salsa Ramadhani</b><small>Junior Web Developer</small></div><button class="secondary" onclick="alert('Berkas Salsa diperiksa')">Periksa</button></div>
+                    <div class="mini-person"><div class="avatar">RF</div><div><b>Rafi Fadillah</b><small>Database Administrator</small></div><button class="secondary" onclick="alert('Berkas Rafi diperiksa')">Periksa</button></div>
+                </div>
+            </div>
+
+            <div class="card admin-table-card">
+                <div class="card-head">
+                    <div><span class="label">JADWAL</span><h3>Kelola Jadwal Asesmen</h3></div>
+                    <button class="secondary" onclick="alert('Form tambah jadwal dibuka')">+ Tambah Jadwal</button>
+                </div>
+                <div class="simple-table">
+                    <div class="simple-row table-title"><span>Sertikom</span><span>Tanggal</span><span>Waktu</span><span>Tempat</span><span>Status</span></div>
+                    <div class="simple-row"><span>Junior Web Developer</span><span>08 Okt 2026</span><span>09.00</span><span>Lab Komputer 2</span><span class="done-text">Aktif</span></div>
+                    <div class="simple-row"><span>Database Administrator</span><span>10 Okt 2026</span><span>13.00</span><span>Lab Komputer 1</span><span class="done-text">Aktif</span></div>
+                    <div class="simple-row"><span>Software Developer</span><span>15 Okt 2026</span><span>09.00</span><span>Lab Komputer 3</span><span class="done-text">Aktif</span></div>
+                </div>
+            </div>
+
+            <div id="coursePanel" class="modal-panel">
+                <div class="modal-card">
+                    <div class="modal-head"><div><span class="label">KELOLA SERTIKOM</span><h2>Tambah Sertikom</h2></div><button class="close-btn" onclick="closeCourseForm()">×</button></div>
+                    <label>Nama Sertikom</label><input id="courseName" placeholder="Contoh: Junior Web Developer">
+                    <label>Deskripsi</label><textarea id="courseDesc" placeholder="Deskripsi singkat sertikom"></textarea>
+                    <label>Status</label><select><option>Aktif</option><option>Nonaktif</option></select>
+                    <button class="primary full" onclick="saveCourse()">Simpan Sertikom</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="menu-item">
+        <a href="index.html"><i class="fa-solid fa-right-from-bracket"></i> Keluar</a>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>

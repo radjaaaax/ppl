@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sertifikat Saya - Manajemen Sertikom</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cert-preview-card { border: 2px dashed #cbd5e1; border-radius: 12px; padding: 32px; background: #ffffff; text-align: center; }
+        .cert-border-inner { border: 3px double #0284c7; padding: 32px 24px; border-radius: 8px; }
+    </style>
+</head>
+<body>
+
+    <div id="sidebar-container"></div>
+
+    <div class="main-content">
+        <header class="topbar">
+            <div><span style="color: #64748b; font-size: 0.85rem;">Peserta / Sertifikat Digital</span></div>
+            <div class="user-profile">
+                <div class="user-avatar">RR</div>
+                <div>
+                    <div style="font-weight: 600; font-size: 0.9rem;">Radja Rafa A.</div>
+                    <div style="font-size: 0.75rem; color: #64748b;">NIM: 4342601065</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="page-header">
+                <h2>Sertifikat Kompetensi Digital</h2>
+                <p>Pratinjau dan unduh sertifikat resmi yang telah diterbitkan dan terverifikasi.</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 2fr 1fr; gap:24px;">
+                <div class="card">
+                    <h3 class="section-title"><i class="fa-solid fa-eye"></i> Pratinjau Sertifikat</h3>
+                    <div class="cert-preview-card">
+                        <div class="cert-border-inner">
+                            <i class="fa-solid fa-award" style="font-size:2.5rem; color:#0284c7; margin-bottom:8px;"></i>
+                            <h3 style="font-size:1.4rem; font-weight:700;">SERTIFIKAT KOMPETENSI</h3>
+                            <div style="margin:20px 0;">
+                                <p style="font-size:0.85rem; color:#64748b;">Diberikan Kepada:</p>
+                                <h2 style="font-size:1.5rem; color:#0284c7; margin:6px 0;">RADJA RAFA ALFATHIR</h2>
+                                <p style="font-size:0.85rem; color:#64748b;">NIM: 4342601065</p>
+                            </div>
+                            <p style="font-size:0.9rem; color:#334155;">Telah dinyatakan <strong>KOMPETEN</strong> pada skema:<br><strong style="color:#0284c7;">Rekayasa Perangkat Lunak</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="card">
+                        <h3 class="section-title"><i class="fa-solid fa-download"></i> Aksi Sertifikat</h3>
+                        <button class="btn" style="width:100%;"><i class="fa-solid fa-file-pdf"></i> Unduh Sertifikat (PDF)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        fetch('sidebar.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+                document.getElementById('menu-sertifikat').classList.add('active');
+            });
+    </script>
+</body>
+</html>
